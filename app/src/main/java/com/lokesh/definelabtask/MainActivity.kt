@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
 
-        // Set up the Navigation Drawer Toggle
+
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, R.string.open_drawer, R.string.close_drawer
         )
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        // Load default fragment (All Matches)
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AllMatchesFragment())
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             navView.setCheckedItem(R.id.nav_all_matches)
         }
 
-        // Handle Navigation Item Clicks
+
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_all_matches -> {

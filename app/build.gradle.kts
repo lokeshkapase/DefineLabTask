@@ -46,7 +46,6 @@ android {
 
 dependencies {
     implementation(libs.androidx.drawerlayout)
-    implementation(libs.material.v150)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)

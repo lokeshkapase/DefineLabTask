@@ -35,7 +35,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, "MatchesDB", 
         while (cursor.moveToNext()) {
             val id = cursor.getString(0)
             val name = cursor.getString(1)
-            matches.add(Venue(id, name))
+            val location = Location(null, 0.0, 0.0, null, null, null)
+            val categories = emptyList<Category>()
+            matches.add(Venue(id, name, location, categories))
         }
         cursor.close()
         db.close()

@@ -35,10 +35,10 @@ class SavedMatchesFragment : Fragment() {
 
     private fun loadSavedMatches() {
         savedMatches.clear()
-        savedMatches.addAll(databaseHelper.getSavedMatches()) // Load from SQLite
+        savedMatches.addAll(databaseHelper.getSavedMatches())
         adapter = SavedMatchAdapter(savedMatches) { match ->
-            databaseHelper.removeMatch(match.id) // Remove from DB
-            loadSavedMatches() // Refresh list
+            databaseHelper.removeMatch(match.id)
+            loadSavedMatches()
         }
         recyclerView.adapter = adapter
     }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SavedMatchAdapter(
     private val savedMatches: List<Venue>,
-    private val onStarClick: (Venue) -> Unit // Callback to remove match from database
+    private val onStarClick: (Venue) -> Unit
 ) : RecyclerView.Adapter<SavedMatchAdapter.SavedMatchViewHolder>() {
 
     class SavedMatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,10 +25,10 @@ class SavedMatchAdapter(
     override fun onBindViewHolder(holder: SavedMatchViewHolder, position: Int) {
         val match = savedMatches[position]
         holder.matchName.text = match.name
-        holder.starIcon.setImageResource(R.drawable.ic_star_active) // Star is always active for saved matches
+        holder.starIcon.setImageResource(R.drawable.ic_star_active)
 
         holder.starIcon.setOnClickListener {
-            onStarClick(match) // Remove from database when clicked
+            onStarClick(match)
         }
     }
 

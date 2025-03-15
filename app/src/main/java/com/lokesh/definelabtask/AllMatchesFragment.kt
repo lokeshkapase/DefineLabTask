@@ -62,7 +62,7 @@ class AllMatchesFragment : Fragment() {
 
     private fun setupRecyclerView() {
         adapter = MatchAdapter(matches, databaseHelper) { match, isSaved ->
-            // Refresh Saved Matches fragment if needed
+
         }
         recyclerView.adapter = adapter
     }
